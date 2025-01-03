@@ -19,6 +19,12 @@ export default function CommentSection({ postId }: CommentSectionProps) {
   const [authorName, setAuthorName] = useState('');
   const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
 
+  
+React.useEffect(() => {
+    // Example: Fetch comments for the specific post using `postId`
+    console.log(`Fetching comments for postId: ${postId}`);
+  }, [postId]);
+  
   const handleAddComment = () => {
     if (newComment.trim() && authorName.trim()) {
       const newCommentObj: Comment = {
